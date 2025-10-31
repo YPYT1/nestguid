@@ -14,5 +14,9 @@ async function bootstrap() {
   const port = process.env.PORT ?? 3000;
   await app.listen(port, '0.0.0.0');
   console.log(`\n🚀 Application is running on: http://localhost:${port}\n`);
+  if ((module as any).hot) {
+    (module as any).hot.accept();
+    (module as any).hot.dispose(() => app.close());
+  }
 }
 bootstrap();

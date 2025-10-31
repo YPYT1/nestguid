@@ -1,5 +1,5 @@
 //一个具有单个路由的基本控制器。
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
